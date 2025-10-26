@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bH8-8P-03B">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FeedViewController" customModule="TestForInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0EZ-y4-VlE">
+                                <rect key="frame" x="8" y="218" width="377" height="517"/>
+                                <color key="backgroundColor" name="primaryBackground"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zdp-QM-3wU">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="TCu-t9-ozl">
+                                <rect key="frame" x="0.0" y="162" width="393" height="56"/>
+                                <color key="barTintColor" name="primaryBackground"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="k13-Q5-Pnc"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="primaryBackground"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0EZ-y4-VlE" secondAttribute="trailing" constant="8" id="3Sm-Em-QrS"/>
+                            <constraint firstItem="TCu-t9-ozl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ctp-zy-SkK"/>
+                            <constraint firstItem="0EZ-y4-VlE" firstAttribute="top" secondItem="TCu-t9-ozl" secondAttribute="bottom" id="Ir4-hI-YmP"/>
+                            <constraint firstItem="TCu-t9-ozl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NDr-dx-Kkm"/>
+                            <constraint firstItem="TCu-t9-ozl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aBb-TO-J1a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0EZ-y4-VlE" secondAttribute="bottom" id="c3g-Kg-447"/>
+                            <constraint firstItem="0EZ-y4-VlE" firstAttribute="top" secondItem="TCu-t9-ozl" secondAttribute="bottom" id="pr8-wb-ifQ"/>
+                            <constraint firstItem="0EZ-y4-VlE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="zlU-Dk-JN7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feed" id="sce-4n-auR"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0EZ-y4-VlE" id="FM4-f4-jYJ"/>
+                        <outlet property="searchBar" destination="TCu-t9-ozl" id="CYv-Da-g7y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782.4427480916029" y="-6.3380281690140849"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="K4b-3V-79a">
+            <objects>
+                <viewController id="h3L-7E-0dG" customClass="FavoritesViewController" customModule="TestForInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3b1-1f-2Dy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Cq-o8-rL5">
+                                <rect key="frame" x="129.33333333333337" y="404.66666666666669" width="134.66666666666663" height="42.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No favorites yet :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU3-q3-VpH">
+                                        <rect key="frame" x="0.0" y="0.0" width="134.66666666666666" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="secondaryBackground"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse to find more" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUa-5e-CGB">
+                                        <rect key="frame" x="0.0" y="28.333333333333311" width="134.66666666666666" height="14.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" name="secondaryBackground"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fQn-1i-30f">
+                                <rect key="frame" x="8" y="162" width="377" height="573"/>
+                                <color key="backgroundColor" name="primaryBackground"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OcK-1g-2fJ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="07L-7b-1fH"/>
+                        <color key="backgroundColor" name="primaryBackground"/>
+                        <constraints>
+                            <constraint firstItem="fQn-1i-30f" firstAttribute="top" secondItem="07L-7b-1fH" secondAttribute="top" id="31q-7E-17g"/>
+                            <constraint firstItem="07L-7b-1fH" firstAttribute="bottom" secondItem="fQn-1i-30f" secondAttribute="bottom" id="H8M-3b-0dI"/>
+                            <constraint firstItem="6Cq-o8-rL5" firstAttribute="centerX" secondItem="3b1-1f-2Dy" secondAttribute="centerX" id="Scp-WO-Sax"/>
+                            <constraint firstItem="6Cq-o8-rL5" firstAttribute="centerY" secondItem="3b1-1f-2Dy" secondAttribute="centerY" id="Tuo-YB-Tn3"/>
+                            <constraint firstItem="fQn-1i-30f" firstAttribute="leading" secondItem="07L-7b-1fH" secondAttribute="leading" constant="8" id="c3K-6E-50h"/>
+                            <constraint firstItem="07L-7b-1fH" firstAttribute="trailing" secondItem="fQn-1i-30f" secondAttribute="trailing" constant="8" id="fQe-5x-0hW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="4fT-8e-83a"/>
+                    <connections>
+                        <outlet property="collectionView" destination="fQn-1i-30f" id="9aS-8q-56o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wxq-77-7hX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782.4427480916029" y="692.25352112676057"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="c3f-4R-3aI">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bH8-8P-03B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9gM-6t-2bK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="tabBarReversedColor"/>
+                        <color key="selectedImageTintColor" name="secondaryBackground"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="selectionIndicatorTintColor" name="secondaryBackground"/>
+                        </tabBarAppearance>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sZg-1E-0c7" kind="relationship" relationship="viewControllers" id="j9h-9g-92j"/>
+                        <segue destination="ZdP-1t-82V" kind="relationship" relationship="viewControllers" id="DmC-33-48x"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77u-1B-33h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="343"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="W0o-2v-10f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sZg-1E-0c7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" image="list.dash" catalog="system" id="0cU-0f-54z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0hS-3g-2bZ">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="tabBarReversedColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iCm-3n-5ch"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8d-4v-7c9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="-6"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="99h-3P-7cD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZdP-1t-82V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="Xe5-8f-82b"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fWb-1R-17g">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="tabBarReversedColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h3L-7E-0dG" kind="relationship" relationship="rootViewController" id="gQ6-1M-08M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V13-1q-98j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="693"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <namedColor name="primaryBackground">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryBackground">
+            <color red="0.37647059560000001" green="0.37647059560000001" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="tabBarReversedColor">
+            <color red="0.0" green="0.019607843137254902" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

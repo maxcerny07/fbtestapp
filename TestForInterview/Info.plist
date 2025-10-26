@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_BEARER_TOKEN</key>
+	<string>eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGNiOWRlMTE1OWU5OTVkYTMzY2NmYjY1OWQ0ZGEyYiIsIm5iZiI6MTY5NzEyODgzMS4zOCwic3ViIjoiNjUyODIxN2YzNzgwNjIwMTFjMDkzMDcyIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.mHxBQrmwH_RKQ6WWS6w_KynUlGOImvMS_JBLztvgZeE</string>
+	<key>API_VERSION</key>
+	<string>3</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
