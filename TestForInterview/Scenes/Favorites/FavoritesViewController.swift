@@ -20,7 +20,7 @@ class FavoritesViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    init(viewModel: FavoritesViewModel, favoritesStore: FavoritesStore) {
+    init(viewModel: FavoritesViewModel, favoritesStore: FavoritesStoreProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self

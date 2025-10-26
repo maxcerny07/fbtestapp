@@ -13,11 +13,11 @@ class DIContainer {
    private init() {}
    
    // MARK: - Dependencies
-   private var _favoritesStore: FavoritesStore?
+   private var _favoritesStore: FavoritesStoreProtocol?
    private var _apiClient: APIClientProtocol?
    
    // MARK: - Computed Properties
-   var favoritesStore: FavoritesStore {
+   var favoritesStore: FavoritesStoreProtocol {
        if _favoritesStore == nil {
            _favoritesStore = DefaultFavoritesStore()
        }

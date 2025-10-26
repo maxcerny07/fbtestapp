@@ -27,7 +27,7 @@ class FeedViewController: UIViewController {
     
     init(viewModel: FeedViewModel,
          apiClient: APIClient,
-         favoritesStore: FavoritesStore) {
+         favoritesStore: FavoritesStoreProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self

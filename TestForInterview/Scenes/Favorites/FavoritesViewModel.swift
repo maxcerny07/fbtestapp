@@ -18,19 +18,19 @@ class FavoritesViewModel {
     weak var delegate: FavoritesViewModelDelegate?
     
     private(set) var movies: [MovieDetailsModel] = []
-    private let favoritesStore: FavoritesStore
+    private let favoritesStore: FavoritesStoreProtocol
     
     private var favoritesObserverId: UUID?
 
     // MARK: - Initialization
     
-    init(favoritesStore: FavoritesStore) {
+    init(favoritesStore: FavoritesStoreProtocol) {
         self.favoritesStore = favoritesStore
         loadFavorites()
     }
     
     func setupFavoritesObserver() {
-        self.favoritesObserverId = favoritesStore.observeFavorites { [weak self] _ in
+        self.favoritesObserverId = favoritesStore.startObserving { [weak self] _ in
             DispatchQueue.main.async {
                 self?.refreshMoviesFavoriteStatus()
                 self?.delegate?.didFetchMovies()
@@ -47,7 +47,7 @@ class FavoritesViewModel {
     // MARK: - Public Methods
     
     func loadFavorites() {
-        movies = favoritesStore.allFavorites()
+        movies = favoritesStore.fetchFavoriteMovies()
     }
     
     func movie(at index: Int) -> MovieDetailsModel? {

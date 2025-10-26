@@ -20,7 +20,7 @@ final class FeedViewModel: ObservableObject {
     weak var delegate: FeedViewModelDelegate?
     
     private let apiClient: APIClientProtocol
-    private let favoritesStore: FavoritesStore
+    private let favoritesStore: FavoritesStoreProtocol
     private let debouncer = Debouncer(interval: 0.5)
     
     private var favoritesObserverId: UUID?
@@ -41,11 +41,11 @@ final class FeedViewModel: ObservableObject {
     // MARK: - Init / Deinit
     
     init(apiClient: APIClientProtocol,
-         favoritesStore: FavoritesStore) {
+         favoritesStore: FavoritesStoreProtocol) {
         self.apiClient = apiClient
         self.favoritesStore = favoritesStore
         
-        self.favoritesObserverId = favoritesStore.observeFavorites { [weak self] _ in
+        self.favoritesObserverId = favoritesStore.startObserving { [weak self] _ in
             DispatchQueue.main.async {
                 self?.refreshMoviesFavoriteStatus()
                 self?.delegate?.didFetchMovies()

@@ -19,13 +19,13 @@ final class DetailsViewModel: ObservableObject {
     @Published var showMore: Bool = false
     @Published var isFavorite: Bool = false
     private let apiClient: APIClientProtocol
-    private let favoritesStore: FavoritesStore
+    private let favoritesStore: FavoritesStoreProtocol
     
     // MARK: - Initialization
     
     init(movie: MovieDetailsModel,
          apiClient: APIClientProtocol,
-         favoritesStore: FavoritesStore) {
+         favoritesStore: FavoritesStoreProtocol) {
         self.movie = movie
         self.apiClient = apiClient
         self.favoritesStore = favoritesStore
